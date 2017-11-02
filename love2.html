@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Our Love Story</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+	
+</head>
+
+<body>
+	<div id="mainDiv">
+		<div id="content">
+			<div id="code">
+				<span class="comments">喵宝贝，</span><br />
+				<span class="space comments">我想牵着你的手，</span><br />
+				<span class="space comments"> 一起走向，属于两个人的未来和明天。</span><br />
+				<span class="space comments"/>和你一起，看日落，看黄昏，看星星满天，</span><br />
+				<span class="space comments"/>陪你一起哭泣，一起欢笑，</span><br />
+				<span class="space comments"/>在淡淡的烟火里，日日年年。</span><br />
+				<span class="space comments"/>我希望，这一生可以和你牵手走过，</span><br />
+				<span class="space comments"/>走到满头斑白，再回头，</span><br />
+				<span class="space comments"/>你，依旧是我心中的那片柔软。</span><br />
+				<span class="space comments"/>我会为我们的未来撑起一片天空，</span><br />
+				<span class="space comments"/>为我们的将来担负起应担的责任，</span><br />
+				<span class="space comments"/>我会一直地，宠你，爱你，让你快乐。</span><br />
+				<br />
+			</div>
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+						杨梦琦, 做我女朋友吧。
+					</div>
+					<div id="loveu">
+						<a href="love.html">Yes.</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sorry.<br/>
+						<div class="signature">klp.</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<audio src="love.mp3"  id="music"  autoplay="autoplay"></audio>
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2017, 1, 25);
+		together.setHours(20);
+		together.setMinutes(0);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 5000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+</body>
+</html>
