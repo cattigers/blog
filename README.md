@@ -1,2 +1,0 @@
-# cattigers.github.io
-web
